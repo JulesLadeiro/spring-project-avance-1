@@ -1,8 +1,16 @@
 package com.example.demo.pojo;
 
 
+import javax.persistence.*;
+
+@Entity
 public class Demo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "libelle")
     private String libelle;
 
     private Integer poid;

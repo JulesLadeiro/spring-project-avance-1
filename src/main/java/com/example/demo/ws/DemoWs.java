@@ -20,9 +20,9 @@ public class DemoWs {
         return demoService.getAllDemo();
     }
 
-    @GetMapping("/{libelle}")
-    public Demo getDemoByLibelle(@PathVariable("libelle") String libelle){
-        return demoService.getDemoByLibelle(libelle);
+    @GetMapping("/{id}")
+    public Demo getDemoByLibelle(@PathVariable("id") Long id){
+        return demoService.getDemoById(id);
     }
 
     @PostMapping
@@ -30,15 +30,15 @@ public class DemoWs {
         demoService.createDemo(demo);
     }
 
-    @PutMapping("/{libelle}")
+    @PutMapping("/{id}")
     public void updateDemo(@RequestBody Demo demo,
-                           @PathVariable("libelle") String libelle){
-        demoService.updateDemo(demo,libelle);
+                           @PathVariable("id") Long id){
+        demoService.updateDemo(demo,id);
 
     }
 
-    @DeleteMapping("/{libelle}")
-    public void deleteDemo(@PathVariable("libelle") String libelle){
-        demoService.deleteDemo(libelle);
+    @DeleteMapping("/{id}")
+    public void deleteDemo(@PathVariable("id") Long id){
+        demoService.deleteDemo(id);
     }
 }
